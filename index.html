@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title> Gallery Hallway</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onselectstart="return false;">
+    <div class="wrap" id="wrap">
+
+        <!-- photo is responsible for translation and rotation -->
+        <div class="photo" id="photo-{{index}}">
+
+            <div class="photo-wrap" onclick="{{onclick_method}}"> <!-- responsible for reversing -->
+                <div class="side side-front">
+                    <p class="image">
+                        <img src="{{img}}">
+                    </p>
+                    <p class="caption">{{caption}}</p>
+                </div>
+
+                <div class="side side-back">
+                    <p class="descrip">{{descrip}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="data_p.js"></script>
+    <script type="text/javascript" src="control_p.js"></script>
+</footer>
+
+</html>

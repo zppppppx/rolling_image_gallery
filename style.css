@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Overall Style */
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Avenir Next', 'Lantinghei SC';
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* The Outline Style */
+.wrap {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    margin-top: -300px;
+    background-color: #333;
+    overflow: hidden;
+
+    -webkit-perspective: 800px;
+    /* If too small, it may exceed the limitation and 0 for no effect at all */
+}
+
+/* The Style of the Picture */
+.photo {
+    width: 260px;
+    height: 320px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .01);
+
+    transition: .6s;
+}
+
+.photo .side {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    /* The content will not overflow its outline */
+}
+
+/* .photo .side-back {
+    display: none;
+} */
+
+.photo .side-front .image {
+    padding: 20px;
+    height: 240px;
+    line-height: 240px;
+    overflow: hidden;
+}
+
+.photo .side-front .image img {
+    width: 100%;
+}
+
+.photo .side-front .caption {
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.photo {
+    /* transform: scale(1.6); */
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+}
+
+.photo .side-back .descript {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+.photo-curr {
+    transform: scale(1.6);
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+    z-index: 999;
+}
+
+.photo-curr:hover {
+    cursor: pointer;
+}
+
+.photo-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+    transform-origin: 260px 50%;
+    transition: all .6s;
+}
+
+
+
+.photo-wrap .side-front {
+    transform: rotateY(0deg);
+}
+
+.photo-wrap .side-back {
+    transform: rotateY(180deg);
+}
+
+.photo-wrap .side {
+    backface-visibility: hidden; /* Hidden if the element is not faced at the screen */
+}
+
+
+.turn {
+    transform: rotateY(180deg) translate(260px, 0px);
+}
+
+@font-face {
+    font-family: "iconfont"; /* Project id  */
+    src: url('./material/iconfont.ttf?t=1671349613973') format('truetype');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: normal;
+    font-weight: bolder;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+
+  .icon-shuaxin_refresh:before {
+    content: "\e61b";
+  }
+  
+  
+
+
+.nav{
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 10%;
+    bottom: 20px;
+    z-index: 999;
+    /* background-color: #fff; */
+    text-align: center;
+}
+
+.nav .i {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #aaa;
+    text-align: center;
+    border-radius: 50%;
+    
+    transition: .6s;
+    transform: scale(.4);
+}
+
+.nav .i::after{
+    content: "\e61b";
+    font-family: "iconfont";
+    font-size: 100%;
+    color: #fff;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    opacity: 0;
+}
+
+.nav .i-curr {
+    background-color: #aaf;
+    /* transition: .6s; */
+    transform: scale(.7);
+}
+
+.nav .i-curr::after {
+    opacity: 1;
+}
+
+.nav .i-back {
+    /* transition: .6s; */
+    /* transform: scale(.7); */
+    transform: rotateY(180deg) scale(.7);
+    background-color: #ada;
+}
